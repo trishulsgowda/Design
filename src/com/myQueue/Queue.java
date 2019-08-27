@@ -4,28 +4,51 @@ public class Queue {
 
 	private Node head = null;
 	private int size = 0;
-	private static final int MAX_SIZE = 5; 
+	public static final int MAX_SIZE = 5; 
 	
-	public void add(int data){
+	public synchronized void add(int data){
 		if(head == null){
 			head = new Node(data);
 			size++;
+			System.out.println("Added : " + data);
 			return;
 		}
 		
-		Node cur = head;
-		while(cur.next != null){
-			cur = cur.next;
+		if(!isFull()){
+			Node cur = head;
+			while(cur.next != null){
+				cur = cur.next;
+			}
+			cur.next = new Node(data);
+			size++;
+			this.notify();
+		}else{
+			try {
+				System.out.println("Buffer is Full !");
+				this.wait();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
-		cur.next = new Node(data);
-		size++;
+		
+		System.out.println("Added : " + data);
 	}
 	
-	public int remove(){
-		int result = head.data;
-		head = head.next;
-		size--;
-		return result;
+	public synchronized void remove(){
+		if(!isEmpty()){
+			int result = head.data;
+			head = head.next;
+			size--;
+			System.out.println("Removed : " + result);
+			this.notify();
+		}else{
+			try {
+				System.out.println("Buffer is Empty !");
+				this.wait();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 	
 	public void displayQueue(){
@@ -39,6 +62,20 @@ public class Queue {
 	
 	public int size(){
 		return this.size;
+	}
+	
+	public boolean isEmpty(){
+		if(size ==0){
+			return true;
+		}
+		return false;
+	}
+	
+	public boolean isFull(){
+		if(size == MAX_SIZE){
+			return true;
+		}
+		return false;
 	}
 }
 
