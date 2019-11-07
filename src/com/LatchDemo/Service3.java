@@ -16,11 +16,11 @@ public class Service3 implements Runnable{
 		System.out.println("Service 3 is getting started...");
 		try {
 			Thread.sleep(5000);
+			System.out.println("Service 3 is started.");
 			latch.countDown();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 		
-		System.out.println("Service 3 is started.");
 	}
 }

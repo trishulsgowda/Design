@@ -16,11 +16,11 @@ private CountDownLatch latch;
 		System.out.println("Service 2 is getting started...");
 		try {
 			Thread.sleep(5000);
+			System.out.println("Service 2 is started.");
 			latch.countDown();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 		
-		System.out.println("Service 2 is started.");
 	}
 }
