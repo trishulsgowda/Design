@@ -1,0 +1,11 @@
+Object level lock is mechanism when we want to synchronize a non-static method or non-static code block such that only one thread will be able to execute the code block on given instance of the class. 
+This should always be done to make instance level data thread safe.
+
+Class level locking should always be done to make static data thread safe. 
+As we know that static keyword associate data of methods to class level, so use locking at static fields or methods to make it on class level.
+
+Java synchronized keyword is re-entrant in nature it means if a synchronized method calls another synchronized method which requires same lock then current thread which is holding lock can enter into that method without acquiring lock.
+
+It’s possible that both static synchronized and non static synchronized method can run simultaneously or concurrently because they lock on different object. - This is demonstrated in ObjectLevelVsClassLevelLockDemo.java
+
+
