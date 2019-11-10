@@ -1,0 +1,16 @@
+When a thread tries to acquire a lock which it has already acquired, 
+It will not block the thread rather it will acquire the same lock again.
+
+For example:
+
+public void method1{
+	synchronized(this){ // Lock is acquired here
+		method2();
+	}
+}
+
+public void method2(){
+	synchronized(this){  // Lock is acquired again
+			// do some work
+	}
+}
