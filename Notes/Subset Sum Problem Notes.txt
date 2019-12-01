@@ -1,0 +1,27 @@
+sum = 5
+a[] = {1,2,3,4};
+
+d[i][j] = sum without considering current value || sum by considering current value
+
+
+Here, sum without considering current value is always the above cell. 
+i.e. d[i][j] = d[i-1][j]
+
+For finding sum by considering current value, Lets see an example,
+Refer Excel Sheet - For forming a sum 3 with 1,2
+Since we are considering current value i.e. 2 remaing value to form sum=3 is 1.
+
+2 + ? = 3
+
+Now, the question is whether we can form sum 1 by ignoring the current value.
+Can we form sum=1 with 1 ?
+d[i][j] = d[i-1][j-a[i]] 
+
+ALGO: To find whether the given sum is possible or not
+dp[a.length][sum+1]
+i=0 to a.length-1
+j=0 to sum
+if(j=0) dp[i][j] = TRUE
+if(i=0) dp[0][j-a[i]] = TRUE
+dp[i][j] = dp[i-1][j] || dp[i-1][j-a[i]]
+
