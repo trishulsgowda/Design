@@ -6,7 +6,7 @@ import java.util.List;
 public class SubsetSumProblem {
 
 	public static void main(String[] args) {
-		int sum = 5;
+		int sum = 7;
 		int a[] = new int[]{1,2,3,4};
 		boolean dp[][] = new boolean[a.length][sum+1];
 		
@@ -33,8 +33,14 @@ public class SubsetSumProblem {
 	}
 
 	private static void printSubset(boolean[][] dp, int[] a, int i, int sum, List<Integer> list) {
-		if(i == 0 || sum == 0){
+
+		if(i <= 0 && sum == 0){
 			System.out.println(list);
+			list.clear();
+			return;
+		}
+		
+		if(i < 0 || sum < 0){
 			return;
 		}
 		
@@ -43,6 +49,7 @@ public class SubsetSumProblem {
 		}
 		
 		if(dp[i][sum]){
+			if(a[i] <=sum)
 			list.add(a[i]);
 			printSubset(dp, a, i-1, sum - a[i], list);
 		}
