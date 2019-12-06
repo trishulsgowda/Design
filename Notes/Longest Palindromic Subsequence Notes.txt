@@ -1,0 +1,21 @@
+func(dp,i,j,str){
+
+int col = j;
+
+if( i==j== str.length()-1 ) return;
+
+while(j<str.length()){
+	if(str.charAt(i)==str.charAt(j)) 
+		d[i][j] = 2 + d[i+1][j-1]
+	else 
+		d[i][j] = Math.max(d[i][j-1],d[i+1][j])
+		
+	i++; j++;
+}
+
+func(dp,0,col++,str);
+
+}
+
+initial call
+func(dp,0,1,str);
