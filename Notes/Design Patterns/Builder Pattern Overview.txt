@@ -1,0 +1,21 @@
+OuterClass{
+
+	Required and Optional attributes
+
+	private Constructor(OuterClassBuilder)
+
+	public static class OuterClassBuilder{   -- Inner Class
+	
+		Required and Optional attributes
+	
+		Public constructor that takes required parameters
+		Setters returns builder
+		build method calling private Constructor
+	}
+
+}
+
+Usage :
+
+OuterClass outerClassObject = 
+new OuterClass.OuterClassBuilder(required params).set(optinals param).set(optinals param).build();
