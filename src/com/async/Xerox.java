@@ -9,8 +9,16 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Xerox implements Runnable {
+	
+	String src;
+	String dest;
 
-	public void copy(String src, String dest) {
+	public Xerox(String src, String dest) {
+		this.src = src;
+		this.dest = dest;
+	}
+
+	public void copy() {
 
 		File srcFile = new File("C:\\Users\\Thrishul\\Desktop\\MT\\" + src + ".txt");
 		File destFile = new File("C:\\Users\\Thrishul\\Desktop\\MT\\" + dest + ".txt");
@@ -43,5 +51,6 @@ public class Xerox implements Runnable {
 
 	@Override
 	public void run() {
+		copy();
 	}
 }
