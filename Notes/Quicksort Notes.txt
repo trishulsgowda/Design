@@ -1,0 +1,83 @@
+
+
+take a left pointer at index 0
+take a right pointer at index a.length-1
+
+
+
+partition the array to find a pivot such that all elements on the left are less than pivot and all elements on right are greater than pivot
+ --> Run the algorithm till the entire array is traversed. i.e. till left and right pointers meet each other 
+sort left part of pivot
+sort right part of pivot
+
+
+sort(a,l,r){
+
+ if(l<r){
+
+  int pivot = partition(a,l,r);
+  sort(a,l,pivot-1);
+  sort(a,pivot+1,r);
+
+ }
+}
+ 
+l         r
+4 2 3 7 1 6
+
+p =4
+
+      l   r  -> l will go to an index which is greater than pivot
+4 2 3 7 1 6 
+
+
+      l r    -> r will go to an index which is less than pivot
+4 2 3 7 1 6
+
+      l r    -> after swap
+4 2 3 1 7 6
+
+        lr    -> l will go to an index which is greater than pivot
+4 2 3 1 7 6
+
+
+      r l    -> r will go to an index which is less than pivot
+4 2 3 1 7 6
+
+      r      -> return r as the pivot
+1 2 3 4 7 6
+
+
+corner case
+  r l
+7 6
+
+
+
+
+
+partition(a,l,r){
+
+low = l;
+p = a[low];
+
+while(l<r){
+	while(a[l] <= p && l < a.length-1){ // l < a.length-1 is corner case
+		l++; // l will go to an index which is greater than pivot
+	}
+	while(a[r] > p && r > 0){
+		r--; // r will go to an index which is less than pivot
+	}
+	if(l < r){
+		swap(a,l,r);  // r has smaller element, l has larger element so move smaller element to left and larger element to right
+	}
+}
+
+a[low] = a[r];
+a[r] = p
+
+return r;
+}
+
+
+
