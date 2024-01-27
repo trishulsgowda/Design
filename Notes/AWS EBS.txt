@@ -1,0 +1,25 @@
+EC2 instances need storage volumes to store application data and host applications.
+
+These volumes are like virtual hard drives that can be attached to EC2 instances.
+
+EBS - Elastic Block Store - is a storage volume that can be attached to EC2 instances.
+
+It is easy to manage and scale.
+
+*************************************
+Why EBS?
+
+When an EC2 instance is created it will already have a root volume, but if there is a failure in availability zone or if the instance is terminated then the root volume will also be deleted and the data is lost.
+
+If we attach/mount an EBS volume to the EC2 instance then even in case of AZ failure or instance termination the data in EBS volume will not be lost. This is the reason we attach EBS volume to EC2 instance.
+
+*************************************
+
+Types of EBS
+
+1. General purpose - gp2/gp3
+2. IOPS - io1
+3. HDD - st1/st2
+
+
+

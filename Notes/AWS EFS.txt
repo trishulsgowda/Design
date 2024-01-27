@@ -1,0 +1,9 @@
+EFS - Elastic File Storage 
+
+EFS has a mount target. Mount target is an endpoint in the VPC which can be used to access the EFS file system. 
+EFS file system cannot be accessed if the mount target is not present.
+
+An EC2 instance can access the EFS file system using the mount target. Mount target will have a security group associated with it which controls the inbound and outbound traffic to the EFS.
+
+An EFS file system can be shared among multiple EC2 instances.
+
