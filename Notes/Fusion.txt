@@ -1,0 +1,107 @@
+Interval List Intersection
+
+List A = [2, 6], [7, 9], [10, 13], [14, 19], [20, 24]
+List B = [1, 4], [6, 8], [15, 18]
+
+Algorithm:
+
+1. Assign pointers to the list
+
+i
+[2, 6], [7, 9], [10, 13], [14, 19], [20, 24]
+
+j
+[1, 4], [6, 8], [15, 18]
+
+2.Compare Starting time and take latest start, Compare ending time and take the earliest end - That will be the intersection
+Add that to output
+
+Compare 2 and 1 - select 2 as the latest start
+Compare 6 and 4 - select 4 as the earliest end
+
+Output: [2,4]
+
+3. Increment pointer of the interval that ends early
+
+Increment j
+
+i
+[2, 6], [7, 9], [10, 13], [14, 19], [20, 24]
+
+         j
+[1, 4], [6, 8], [15, 18]
+
+4. Compare like Step2
+
+output: [2,4] [6,6]
+
+5. Increment like step3
+
+Increment i 
+
+         i
+[2, 6], [7, 9], [10, 13], [14, 19], [20, 24]
+
+        j
+[1, 4], [6, 8], [15, 18]
+
+Repeat the process
+
+Compare - 
+Output - [2,4] [6,6] [7,8]
+
+Increment
+
+         i
+[2, 6], [7, 9], [10, 13], [14, 19], [20, 24]
+
+                 j
+[1, 4], [6, 8], [15, 18]
+
+Compare - *** Add increment only if start <= end ***
+Output - [2,4] [6,6] [7,8]
+
+Increment
+
+                 i
+[2, 6], [7, 9], [10, 13], [14, 19], [20, 24]
+
+                 j
+[1, 4], [6, 8], [15, 18]
+
+Compare - *** Add increment only if start <= end ***
+Output - [2,4] [6,6] [7,8]
+
+Increment
+
+                           i
+[2, 6], [7, 9], [10, 13], [14, 19], [20, 24]
+
+                 j
+[1, 4], [6, 8], [15, 18]
+
+Compare - 
+Output - [2,4] [6,6] [7,8] [15,18]
+
+Since List B is traversed completely, We will end the traversal and return the output as
+[2,4] [6,6] [7,8] [15,18]
+
+Example 2:
+
+List A: [1, 29]
+List B: [1, 5], [6, 10], [11, 14], [15, 18], [19, 20]
+
+i
+[1, 29]
+
+                                           j
+[1, 5], [6, 10], [11, 14], [15, 18], [19, 20]
+
+
+
+
+
+
+
+
+
