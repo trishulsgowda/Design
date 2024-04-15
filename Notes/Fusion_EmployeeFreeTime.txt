@@ -1,0 +1,91 @@
+My Simple Approach
+
+     i
+A -> 2,3 7,9
+     j 
+B -> 1,4 6,7
+
+
+heap - 1,4 2,3 6,7 7,9
+previous = 1
+
+pop - 
+1,4
+If start(1) > previous(1) then add start,previous - not true
+previous = max(previous, end) = max(1,4) = 4
+
+pop
+2,3
+If start(2) > previous(4) then add start,previous - not true
+previous = max(4,3) = 4
+
+pop -
+6,7
+If start(6) > previous(4) then add previous,start - add 4,6 to result
+previous = max(4,7) = 7
+
+pop
+7,9
+If start(7) > previous(7) then add previous,start - not true
+previous = max(7,9) = 9
+
+Heap is empty 
+
+Return result
+
+
+
+
+
+     i
+A -> 2,3 7,9
+     j 
+B -> 1,4 6,7
+
+
+heap - 1,1,0 2,0,0
+previous = 1
+
+**********************
+Pop from heap 
+i = 1, j= 0
+
+interval = 1,4
+
+Add to result if current interval start is greater than previous
+Update previous = max(1,4) = 4
+
+Add all the intervals into heap 
+
+heap = 2,0,0 6,1,1
+**********************
+
+Pop from heap 
+i =0, j=0
+
+interval - 2,3
+
+Add to result if current interval start is greater than previous
+Update previous = max(4,3) = 4
+
+Add all the intervals into heap 
+heap = 6,1,1 7,0,1
+**********************
+
+Pop from heap
+i = 1, j =1
+
+interval - 6,7
+Add to result if current interval start is greater than previous
+result = 4,6
+Update previous = max(4,7) = 7
+
+
+
+
+
+
+
+
+
+
