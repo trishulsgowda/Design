@@ -1,0 +1,8 @@
+First create Car, Fuel, Transmission and CarClient Class
+
+In car class makeCar will create a basic variant of the car.
+
+Later, We can subclass Car class to produces other variants. 
+The subclasses will override the makeCar method to create other variants.
+
+Here makeCar method is the factory method, which produces different variants of the car.
