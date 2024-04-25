@@ -1,0 +1,18 @@
+1. Create a Chai inerface with cost variable, getDescription and getCost method
+2. Create a Chai implementation class 
+3. Create a ChaiShop client and call both the methods
+
+Now to create a decorator means, adding extra feature for Chai without modifying the Chai class
+
+How can we do it?
+
+4. Create a decorator abstract class that implements Chai interface
+
+** The rule of thumb in decorator pattern is that both the model class and the decorator class implements the same interface
+
+5. Create a decorator implementation that extends abstract decorator class.
+   This decorator implementation should get an instance of Chai in the constructor
+   
+6. Override the methods in the decorator
+
+7. In ChaiShop client pass the chai object in the decorator and  that will add new features to the chai
