@@ -1,0 +1,21 @@
+
+        c
+    s e 
+0 0 1 1 2 2
+
+      c
+    s e
+0 0 1 1 2 2
+
+
+if c=1, increment c
+
+if c is 0, s is 0 -> increment s and c 
+if c is 0, s is not 0 -> swap and increment both
+
+if c is 2, e is 2 -> decrement e
+if c is 2, e is not 2, swap and decrement e
+
+        c
+  s   e
+0 1 1 1 2 2 2
