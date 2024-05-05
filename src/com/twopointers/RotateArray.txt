@@ -1,0 +1,31 @@
+1 2 3 4 5
+0 1 2 3 4
+
+4 5 1 2 3
+0 1 2 3 4 
+
+k = 2;
+
+
+l=0
+h=4
+
+h-k = s = 2
+
+(i + k) % size 
+2 % 5 = 2
+3 % 5 = 3
+4 % 5 = 4
+
+5 % 5 = 0
+6 % 5 = 1
+
+
+Reverse approach
+1. Reverse last k elements
+2. Reverse first elements upto k
+3. Reverse the entire array
+
+1 2 3 5 4
+3 2 1 5 4
+4 5 1 2 3 
