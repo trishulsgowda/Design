@@ -1,0 +1,8 @@
+Composite means group of independent parts
+
+In this example,  we have 3 entities
+
+1. IndependentCollege 
+2. University - group of independent Colleges
+3. College - abstraction for both IndependentCollege and University
+
