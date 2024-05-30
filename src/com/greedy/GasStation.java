@@ -27,7 +27,7 @@ public class GasStation {
 					break;
 				}
 				
-				if(j%gas.length -1 == start && cg>=0){
+				if(j%gas.length == start-1 && cg>=0){
 					return start;
 				}
 			}while(start != j%gas.length);
